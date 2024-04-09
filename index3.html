@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>第五人格</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- 页面一 -->
+
+      <div class="box2" style="display: block">
+        <img src="./img/流萤.jpg" alt="" />
+        <div class="bottom2"></div>
+      </div>
+      <div class="box3">
+        <img src="./img/3.jpg" alt="" />
+        <div class="bottom3"></div>
+        <input class="input1" type="text" placeholder="点击输入赠送人的昵称" />
+      </div>
+      <div class="box4">
+        <img src="./img/4.jpg" alt="" />
+        <!-- 头像 -->
+        <div class="img">
+          <img src="./img/tou.jpg" alt="" />
+        </div>
+        <div class="text">
+          <!-- 文字 -->
+          <!-- 这里是昵称 -->
+        </div>
+        <div class="dengji">
+          <!-- 这里是等级 -->
+        </div>
+        <div class="bottom4"></div>
+        <input class="input1" type="text" placeholder="点击输入赠送人的昵称" />
+      </div>
+      <div class="box5">
+        <img src="./img/流萤1.jpg" alt="" />
+        <div class="textone"></div>
+        <div class="bottom5"></div>
+      </div>
+      <div class="box6">
+        <video autoplay muted src="./img/4月8日 .mp4"></video>
+        <div class="bottom6"></div>
+      </div>
+    </div>
+    <script>
+      // 按钮
+      const bot1 = document.querySelector(".bottom1");
+      const bot2 = document.querySelector(".bottom2");
+      const bot3 = document.querySelector(".bottom3");
+      const bot4 = document.querySelector(".bottom4");
+      const bot5 = document.querySelector(".bottom5");
+      const bot6 = document.querySelector(".bottom6");
+
+      // 盒子
+      const box1 = document.querySelector(".box1");
+      const box2 = document.querySelector(".box2");
+      const box3 = document.querySelector(".box3");
+      const box4 = document.querySelector(".box4");
+      const box5 = document.querySelector(".box5");
+      const box6 = document.querySelector(".box6");
+
+      const shuru = document.querySelector(".input1").value;
+
+      bot2.addEventListener("click", () => {
+        box3.style.display = "block";
+      });
+      bot3.addEventListener("click", () => {
+        box4.style.display = "block";
+        const shuru = document.querySelector(".input1").value;
+
+        document.querySelector(".text").innerHTML = shuru;
+        // 将.input1输入的值填入.text中
+        // 随机一个图片给头像
+        const tou = document.querySelector(".img");
+        tou.innerHTML = `<img src="./img/tou${Math.floor(
+          Math.random() * 3
+        )}.jpg" alt="" />`;
+        // 生成随机数1-120之间
+        const num = Math.floor(Math.random() * 120);
+        // 填入.dengji中
+        document.querySelector(".dengji").innerHTML = num;
+      });
+      bot4.addEventListener("click", () => {
+        box5.style.display = "block";
+        const shuru = document.querySelector(".input1").value;
+
+        document.querySelector(".textone").innerHTML = shuru;
+      });
+      bot5.addEventListener("click", () => {
+        box6.style.display = "block";
+      });
+      bot6.addEventListener("click", () => {
+        location.href = "./index.html";
+      });
+    </script>
+  </body>
+</html>
